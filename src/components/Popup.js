@@ -6,11 +6,25 @@ const Popup = (props) => {
     
 
     return (
-        <div>
-            <h4>Thank you for registering {props.name} {props.last} </h4>
-            <button onClick={props.handleDatabase}>Click Here If You Are Done</button>
-            <h5><a href='/tour'>See more detail about what we do</a></h5>
-        </div>
+        <div class="container">
+
+<div class="card text-center">
+<div class="card-header">
+  <h4>Thank you {props.name} {props.last}!</h4>
+</div>
+<div class="card-body">
+  <h5 class="card-title">You Have Chosen {props.select} Tour Plan</h5>
+  <p class="card-text">Perfect, Exciting Choice! We will make sure that this will be one of the best moments in your life.</p>
+  <button class="btn btn-primary" onClick={props.handleDatabase}>Click Here If You Are Done</button>
+  <br />
+  <button><a href='/' class="btn btn-primary">Back</a></button>
+
+</div>
+<div class="card-footer text-muted">
+</div>
+</div>
+
+</div>
     );
 }
 

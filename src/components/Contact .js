@@ -3,7 +3,6 @@ import React from 'react';
 const Contact = (props) => {
     return (
         <div className="container">
-            <h4 className="center">Contact</h4>
             <section class="mb-4">
 <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
 
@@ -56,15 +55,15 @@ const Contact = (props) => {
     <div class="col-md-3 text-center">
         <ul class="list-unstyled mb-0">
             <li><i class="fas fa-map-marker-alt fa-2x"></i>
-                <p>San Francisco, CA 94126, USA</p>
+                <p>Addis Ababa, Ethiopia</p>
             </li>
 
             <li><i class="fas fa-phone mt-4 fa-2x"></i>
-                <p>+ 01 234 567 89</p>
+                <p>+251 944 4488</p>
             </li>
 
             <li><i class="fas fa-envelope mt-4 fa-2x"></i>
-                <p>contact@mdbootstrap.com</p>
+                <p>contact@tourethiopia.com</p>
             </li>
         </ul>
     </div>

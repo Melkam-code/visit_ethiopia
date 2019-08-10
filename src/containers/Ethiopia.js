@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import Form from '../containers/Form';
-import Danakil from '../assets/image/Danakil.jpg';
-import bluenile from '../assets/image/bluenile.jpg';
-import semen from '../assets/image/semen.jpg';
-import lali from '../assets/image/lali.jpg';
-import travel from '../assets/image/travel.jpg';
+import Register from './Register';
+import Contact from '../components/Contact ';
 import timk from '../assets/image/timk.jpg';
+import parks from '../assets/image/parks.jpg';
+import history from '../assets/image/history.jpg';
+import omo from '../assets/image/omo.jpg';
 import './Ethiopia.css';
 
 
 class Ethiopia extends Component {
     state = {
-        register: false
+        register: false,
+        registerForPlan: false
     }
     
     clickHandler = (e) => {
@@ -20,14 +20,26 @@ class Ethiopia extends Component {
         });
     }
 
+    registerPlanHandler = (e) => {
+      this.setState({
+        registerForPlan: !this.state.registerForPlan
+      })
+    }
+
     render () {
         if (this.state.register) {
             return (
-               <Form />
+               <Register />
             );
+        }
+        if (this.state.registerForPlan) {
+          return (
+            <Register />
+          )
         }
         return (
             <div>
+              <div className="mycontainer">
                 <h4 className="center">WELCOME TO TOUR-ETHIOPIA</h4>
                 <p>TourEthiopia is a reputable  tour service provider based in Addis Ababa, Ethiopia. Equipped with knowledgeable & experienced team members, it is a socially responsible and environmentally friendly travel company. Since our establishment in 2012 we have been striving to provide the maximum quality service to our clients and expand our destinations. Starting from 2016, FKLM Ethiopia has started tours to Kenya, Tanzania, Zanzibar, Seychelles, Somaliland and Djibouti. Our strength lays in our full knowledge of our working environment and the corresponding tourist resources. We update our knowledge constantly so that we can design customized holidays for our clients and offer them the best experience possible.
 
@@ -40,7 +52,7 @@ Our tours in Ethiopia tours will enable you visit, Historical route like Bahir D
                 <br />
                 <button className="button" onClick={this.clickHandler}>Register Me</button>
                 <br />
-                
+               </div>
            <hr />
      <div class="container">
 <div class="card card-cascade wider reverse">
@@ -51,7 +63,6 @@ Our tours in Ethiopia tours will enable you visit, Historical route like Bahir D
     </a>
   </div>
   <div class="card-body card-body-cascade text-center">
-    <h4 class="card-title"><strong>Ethiopia</strong></h4>
  
     <h6 class="font-weight-bold indigo-text py-2"></h6>
 
@@ -65,45 +76,83 @@ Our tours in Ethiopia tours will enable you visit, Historical route like Bahir D
     <a class="px-2 fa-lg fb-ic"><i class="fab fa-facebook-f"></i></a>
 
   </div>
-
 </div>
 </div>
   <hr />
 
+  <div class="card mycontainer">
+  <div class="card-header">
+    Quote
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+      <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+    </blockquote>
+  </div>
+</div>
+
+<div className="mycontainer">
+<div class="card mb-3">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src={history} class="card-img" alt="ethiopian history" />
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+      <h5 class="card-title">
+      Discover the Historic Routes</h5>
+        <p class="card-text">This 14 Nights and 15 Days package tour lets you experience the major Historical sites of the Christian Highlands of North Ethiopia.</p>
+        <button type="button" 
+                class="btn btn-secondary btn-lg"
+                onClick={this.registerPlanHandler} >REGISTER FOR PLAN</button>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
 
 
-                <ul class="list-unstyled">
-  <li class="media">
-    <img class="d-flex mr-3" src="https://mdbootstrap.com/img/Photos/Others/placeholder7.jpg" alt="Generic placeholder image" />
-    <div class="media-body">
-      <h5 class="mt-0 mb-1 font-weight-bold">List-based media object</h5>
-      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in
-      vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia
-      congue felis in faucibus.
+  <div className="mycontainer">
+<div class="card mb-3">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src={omo} class="card-img" alt="omo valley" />
     </div>
-  </li>
-  <li class="media my-4">
-    <img class="d-flex mr-3" src="https://mdbootstrap.com/img/Photos/Others/placeholder6.jpg" alt="Generic placeholder image" />
-    <div class="media-body">
-      <h5 class="mt-0 mb-1 font-weight-bold">List-based media object</h5>
-      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in
-      vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia
-      congue felis in faucibus.
+    <div class="col-md-8">
+      <div class="card-body">
+      <h5 class="card-title">
+    Discover Tribal Ethiopia</h5>
+        <p class="card-text">Fly down to Arba Minch and prepare to get fascinated with various Omo Valley tribes including the Konso tribes, the Mursi tribes in Mago National Park, and the spectacular Hamer tribes in Turmi.</p>
+        <button type="button" 
+                class="btn btn-secondary btn-lg"
+                onClick={this.registerPlanHandler} >REGISTER FOR PLAN</button>
+      </div>
     </div>
-  </li>
-  <li class="media">
-    <img class="d-flex mr-3" src="https://mdbootstrap.com/img/Photos/Others/placeholder5.jpg" alt="Generic placeholder image" />
-    <div class="media-body">
-      <h5 class="mt-0 mb-1 font-weight-bold">List-based media object</h5>
-      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in
-      vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia
-      congue felis in faucibus.
+  </div>
+  </div>
+  </div>
+
+  <div className="mycontainer">
+<div class="card mb-3">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src={parks} class="card-img" alt="national parks" />
     </div>
-  </li>
-</ul>
-               
-                
-            
+    <div class="col-md-8">
+      <div class="card-body">
+      <h5 class="card-title">
+      National Parks of Ethiopia</h5>
+        <p class="card-text">Ethiopia's many national parks enable the visitor to enjoy the country's scenery and its wildlife,  conserved in natural habitats, and offer opportunities for travel adventure unparalleled in Africa.</p>
+        <button type="button" 
+                class="btn btn-secondary btn-lg"
+                onClick={this.registerPlanHandler} >REGISTER FOR PLAN</button>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
           </div>
         );
     }
