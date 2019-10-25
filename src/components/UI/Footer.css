@@ -4,6 +4,10 @@
 }
 
 .footer{
-  background-color: rgb(207, 3, 44);
+  background-color: #c62828;
   color: white;
+}
+
+p {
+  font-size: 17px;
 }
