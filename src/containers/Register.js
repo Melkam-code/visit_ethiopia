@@ -103,7 +103,7 @@ class Register extends Component {
    
     <div class="input-group">
      <div class="input-group-prepend">
-     <span class="input-group-text" style={{ color: '#808080', fontSize: '17px'}}>Other Preferences</span>
+     <span class="input-group-text" style={{ color: '#808080', fontSize: '18px'}}>Other Preferences</span>
      </div>
      <textarea class="form-control" aria-label="With textarea"
                value={this.state.opinion} onChange={(event) => this.setState({opinion: event.target.value})} ></textarea>
