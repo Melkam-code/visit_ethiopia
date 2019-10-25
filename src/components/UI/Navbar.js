@@ -1,10 +1,11 @@
 import React from 'react';
+import './Navbar.css';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
         <nav className="nav-wrapper red darken-3">
-            <div className="container">
+           <div class="hey">
                 <a className="brand-logo" href="/">TourEthiopia</a>
                 <ul className="right">
                     <li><Link to='/' exact>Ethiopia</Link></li>
@@ -13,7 +14,7 @@ const Navbar = () => {
                     <li><Link to='/attraction'>Attraction Sites</Link></li>
                     <li><Link to='/contact'>Contact</Link></li>
                 </ul>
-            </div>
+                </div>
         </nav>
     );
 }
