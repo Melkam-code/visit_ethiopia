@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './Attraction.css';
+import Alert from './Alert';
 import danakil from '../assets/image/danakil.jpg';
 import bluenile from '../assets/image/bluenile.jpg';
 import semen from '../assets/image/semen.jpg';
@@ -11,9 +12,48 @@ import harar from '../assets/image/harar.jpeg';
 import gondor from '../assets/image/gondor.png';
 
 
-const Attraction = () => {
+class Attraction extends Component {
+  
+  state = {
+     blueNile: '',
+     omoValley: '',
+     danakil: '',
+     harar: '',
+     lalibela: '',
+     axum: '',
+     gonder: '',
+     semien: '',
+     parks: '',
+     alert: false,
+     moreTour: false
+  }
+
+  handleMoreTour = (e) => {
+    this.setState({
+       moreTour: !this.state.moreTour
+    })
+  }
+
+  render (){
+    if(this.state.moreTour) {
+      return <Attraction />
+    }
+    if(this.state.blueNile != '') {
+      return <Alert blueNile={this.state.blueNile}
+      omoValley={this.state.omoValley}
+      danakil={this.state.danakil}
+      harar={this.state.harar}
+      lalibela={this.state.lalibela}
+      axum={this.state.axum}
+      gonder={this.state.gonder}
+      semien={this.state.semien}
+      parks={this.state.parks}
+      handleMoreTour={this.handleMoreTour} />
+    }
+   
    return (
      <div className="visit">
+
       
 <div class="card-group">
   <div class="card mb-4">
@@ -29,6 +69,10 @@ const Attraction = () => {
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
      
       <button type="button" class="btn btn-primary btn-md">Read more</button>
+      <button type="button" 
+                class="btn btn-secondary btn-lg"
+                value="Blue Nile Plan"
+                onClick={(event) => this.setState({blueNile: event.target.value})} >Add Tour Plan</button>
 
     </div>
   </div>
@@ -46,6 +90,10 @@ const Attraction = () => {
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
      
       <button type="button" class="btn btn-primary btn-md">Read more</button>
+      <button type="button" 
+                class="btn btn-secondary btn-lg"
+                value="Omo Valley Plan"
+                onClick={(event) => this.setState({omoValley: event.target.value})} >Add Tour Plan</button>
 
     </div>
   </div>
@@ -60,14 +108,14 @@ const Attraction = () => {
       <h4 class="card-title">Danakil Depression</h4>
      
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-     
       <button type="button" class="btn btn-primary btn-md">Read more</button>
-
+      <button type="button" 
+                class="btn btn-secondary btn-lg"
+                value="Danakil Depression"
+                onClick={(event) => this.setState({danakil: event.target.value})} >Add Tour Plan</button>
     </div>
   </div>
 </div>
-
-
 
 <div class="card-group">
   <div class="card mb-4">
@@ -83,6 +131,10 @@ const Attraction = () => {
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
      
       <button type="button" class="btn btn-primary btn-md">Read more</button>
+      <button type="button" 
+                class="btn btn-secondary btn-lg"
+                value="Harar"
+                onClick={(event) => this.setState({harar: event.target.value})} >Add Tour Plan</button>
 
     </div>
   </div>
@@ -100,6 +152,10 @@ const Attraction = () => {
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
      
       <button type="button" class="btn btn-primary btn-md">Read more</button>
+      <button type="button" 
+                class="btn btn-secondary btn-lg"
+                value="Lalibela"
+                onClick={(event) => this.setState({lalibela: event.target.value})} >Add Tour Plan</button>
 
     </div>
   </div>
@@ -116,6 +172,10 @@ const Attraction = () => {
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
      
       <button type="button" class="btn btn-primary btn-md">Read more</button>
+      <button type="button" 
+                class="btn btn-secondary btn-lg"
+                value="Axum"
+                onClick={(event) => this.setState({axum: event.target.value})} >Add Tour Plan</button>
 
     </div>
   </div>
@@ -137,6 +197,10 @@ const Attraction = () => {
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
      
       <button type="button" class="btn btn-primary btn-md">Read more</button>
+      <button type="button" 
+                class="btn btn-secondary btn-lg"
+                value="Gonder"
+                onClick={(event) => this.setState({gonder: event.target.value})} >Add Tour Plan</button>
 
     </div>
   </div>
@@ -149,11 +213,15 @@ const Attraction = () => {
     </div>
     <div class="card-body">
     
-      <h4 class="card-title">Semein Mountains</h4>
+      <h4 class="card-title">Semien Mountains</h4>
     
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
      
       <button type="button" class="btn btn-primary btn-md">Read more</button>
+      <button type="button" 
+                class="btn btn-secondary btn-lg"
+                value="Semien Mountains"
+                onClick={(event) => this.setState({semien: event.target.value})} >Add Tour Plan</button>
 
     </div>
   </div>
@@ -170,13 +238,18 @@ const Attraction = () => {
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
      
       <button type="button" class="btn btn-primary btn-md">Read more</button>
+      <button type="button" 
+                class="btn btn-secondary btn-lg"
+                value="National Parks"
+                onClick={(event) => this.setState({parks: event.target.value})} >Add Tour Plan</button>
 
     </div>
   </div>
 </div>
-</div>
 
+</div>
    );
+  }
 }
 
 
