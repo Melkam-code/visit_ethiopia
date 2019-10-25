@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Register from './Register';
 import Contact from '../components/Contact ';
+import Attraction from '../components/Attraction';
 import timk from '../assets/image/timk.jpg';
 import parks from '../assets/image/parks.jpg';
 import history from '../assets/image/history.jpg';
@@ -11,13 +12,20 @@ import './Ethiopia.css';
 class Ethiopia extends Component {
     state = {
         register: false,
-        registerForPlan: false
+        registerForPlan: false,
+        goToSinglePlan: false
     }
     
     clickHandler = (e) => {
         this.setState({
             register: !this.state.register
         });
+    }
+
+    handleSingleTour = (e) => {
+     this.setState({
+        goToSinglePlan: !this.state.goToSinglePlan
+     })
     }
 
     registerPlanHandler = (e) => {
@@ -35,6 +43,11 @@ class Ethiopia extends Component {
         if (this.state.registerForPlan) {
           return (
             <Register />
+          )
+        }
+        if (this.state.goToSinglePlan) {
+          return (
+            <Attraction />
           )
         }
         return (
@@ -80,18 +93,6 @@ Our tours in Ethiopia tours will enable you visit, Historical route like Bahir D
 </div>
   <hr />
 
-  <div class="card mycontainer">
-  <div class="card-header">
-    Quote
-  </div>
-  <div class="card-body">
-    <blockquote class="blockquote mb-0">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-      <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-    </blockquote>
-  </div>
-</div>
-
 <div className="mycontainer">
 <div class="card mb-3">
   <div class="row no-gutters">
@@ -104,8 +105,8 @@ Our tours in Ethiopia tours will enable you visit, Historical route like Bahir D
       Discover the Historic Routes</h5>
         <p class="card-text">This 14 Nights and 15 Days package tour lets you experience the major Historical sites of the Christian Highlands of North Ethiopia.</p>
         <button type="button" 
-                class="btn btn-secondary btn-lg"
-                onClick={this.registerPlanHandler} >REGISTER FOR PLAN</button>
+                class="otherButton"
+                onClick={this.registerPlanHandler} >REGISTER PLAN</button>
       </div>
     </div>
   </div>
@@ -125,8 +126,8 @@ Our tours in Ethiopia tours will enable you visit, Historical route like Bahir D
     Discover Tribal Ethiopia</h5>
         <p class="card-text">Fly down to Arba Minch and prepare to get fascinated with various Omo Valley tribes including the Konso tribes, the Mursi tribes in Mago National Park, and the spectacular Hamer tribes in Turmi.</p>
         <button type="button" 
-                class="btn btn-secondary btn-lg"
-                onClick={this.registerPlanHandler} >REGISTER FOR PLAN</button>
+                class="otherButton"
+                onClick={this.registerPlanHandler} >REGISTER PLAN</button>
       </div>
     </div>
   </div>
@@ -145,11 +146,31 @@ Our tours in Ethiopia tours will enable you visit, Historical route like Bahir D
       National Parks of Ethiopia</h5>
         <p class="card-text">Ethiopia's many national parks enable the visitor to enjoy the country's scenery and its wildlife,  conserved in natural habitats, and offer opportunities for travel adventure unparalleled in Africa.</p>
         <button type="button" 
-                class="btn btn-secondary btn-lg"
-                onClick={this.registerPlanHandler} >REGISTER FOR PLAN</button>
+                class="otherButton"
+                onClick={this.registerPlanHandler} >REGISTER PLAN</button>
       </div>
     </div>
   </div>
+  </div>
+</div>
+  
+
+<div class="card mycontainer">
+  <div class="card-header">
+    <h4>See Single Tour Plans and Add Them to Your List</h4>
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p>We have the above general tour plans which include a number of tour plans, these plans are 
+        the best choice for customers who don't know much about Ethiopia. But for customers who want to pick
+        their own list of places to visit and tour plans, we arranged single tour plans. You can add all the single 
+        tour plans you want and we will make it happen! 
+      </p>
+      <button type="button" 
+                class="otherButton"
+                onClick={this.handleSingleTour} >See Single Tour Plans Here</button>
+      <footer class="blockquote-footer"></footer>
+    </blockquote>
   </div>
 </div>
 

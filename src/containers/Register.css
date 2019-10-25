@@ -10,23 +10,29 @@
   }
   
 .Submit {
-    width: 50%;
-    background-color: #5bc0de;
+    width: 30%;
+    background-color: #08605F;
     color: white;
-    padding: 14px 20px;
-    margin: 20px 100px;
+    font-size: 20px;
+    padding: 10px 10px;
+    margin-left: 350px;
+    margin-top: 60px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
   }
 .Submit:hover {
-    background-color:lightcoral;
+    background-color: gray;
   }
   
 .Form {
-  width: 70%;
-    margin: auto;
+  width: 92%;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 100px;
+    margin-bottom: 100px;
     border-radius: 5px;
     background-color: lightcyan;
-    padding: 30px;
+    padding: 60px;
   }
+  
